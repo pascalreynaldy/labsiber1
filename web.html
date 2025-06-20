@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Penetrasi Uji Web | LABSIBER</title>
+  <link rel="stylesheet" href="alayanan.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+ <header>
+  <div class="nav-left">
+    <a href="index.html" class="nav-left" style="text-decoration: none; color: inherit;">
+    <img src="images/labsiber tp 1.png" />
+    <h1>LABSIBER</h1>
+    </a>
+  </div>
+  <nav class="nav-right">
+    <ul>
+      <li><a href="harga.html">Harga</a></li>
+      <li class="dropdown">
+        <a href="layanan.html">Layanan</a>
+        <ul class="dropdown-menu layanan">
+          <li>
+            <a href="web.html">
+            <img src="images/logoweb.png" alt="Web" />
+            <div>
+              <strong>Web</strong>
+              <p>Pemeriksaan kerentanan situs web.</p>
+            </div>
+            </a>
+          </li>
+          <li>
+            <a href="mobile.html">
+            <img src="images/logomob.png" alt="Mobile" />
+            <div>
+              <strong>Mobile</strong>
+              <p>Uji keamanan aplikasi Android/iOS.</p>
+            </div>
+            </a>
+          </li>
+          <li>
+            <a href="net.html">
+            <img src="images/logonet.png" alt="Net" />
+            <div>
+              <strong>Net</strong>
+              <p>Audit jaringan internal dan eksternal.</p>
+            </div>
+            </a>
+          </li>
+          <li>
+            <a href="red.html">
+            <img src="images/logored.png" alt="Red Team" />
+            <div>
+              <strong>Red Team</strong>
+              <p>Simulasi serangan dunia nyata.</p>
+            </div>
+            </a>
+          </li>
+          <li>
+            <a href="api.html">
+            <img src="images/logoapi.png" alt="API" />
+            <div>
+              <strong>API</strong>
+              <p>Penetrasi keamanan endpoint API.</p>
+            </div>
+            </a>
+          </li>
+          <li class="selengkapnya"><a href="layanan.html">Selengkapnya →</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">Perusahaan</a>
+        <ul class="dropdown-menu perusahaan">
+          <li><a href="about.html">Tentang Kami</a></li>
+          <li><a href="tim.html">Tim Kami</a></li>
+          <li><a href="teman.html">Teman Kami</a></li>
+          <li><a href="ulasan.html">Ulasan & Testimoni</a></li>
+          <li><a href="loker.html">Lowongan</a></li>
+          <li><a href="kontak.html">Kontak Kami</a></li>
+        </ul>
+      </li>
+
+      <li><a href="jadwal.html">Konsultasi</a></li>
+      <li><a href="login.html">Masuk</a></li>
+      <li><button class="btn-daftar">Daftar</button></li>
+    </ul>
+  </nav>
+</header>
+
+  <section class="hero">
+  <div class="container hero-container">
+    <div class="hero-text">
+      <h1>Penetrasi <span>Uji Web</span></h1>
+      <p>
+        Proses pengujian keamanan aplikasi web untuk mengidentifikasi dan mengevaluasi celah keamanan
+        yang dapat dimanfaatkan oleh peretas.
+      </p>
+    </div>
+    <div class="hero-image">
+      <img src="images/ilusweb.png" alt="Ilustrasi Pengujian Web" />
+    </div>
+  </div>
+</section>
+
+
+   <section class="intro">
+    <div class="container">
+      <h2>Apa Itu Penetrasi <span>Uji Web</span>?</h2>
+      <p>Proses pengujian keamanan aplikasi web untuk mengidentifikasi dan mengevaluasi celah keamanan. Tujuannya adalah memberikan rekomendasi perbaikan sebelum kerentanan dieksploitasi pihak tidak bertanggung jawab.</p>
+    </div>
+  </section>
+
+ <section class="pricing">
+  <div class="container">
+    <h2>Harga <span>Layanan</span></h2>
+    <div class="cards">
+
+      <!-- Card: Grey Box -->
+      <div class="card">
+        <div class="card-logo">
+          <img src="images/gb.png" alt="Grey Box Logo" />
+        </div>
+        <h3>Grey Box</h3>
+        <p class="price">Rp7.000.000</p>
+        <ul>
+          <li>Tidak memerlukan akses penuh ke database</li>
+          <li>Memanfaatkan informasi terbatas</li>
+          <li>Menggabungkan pengujian otomatis dan manual</li>
+        </ul>
+        <a href="pw.html" class="btn">Pilih Metode</a>
+      </div>
+
+      <!-- Card: Black Box -->
+      <div class="card">
+        <div class="card-logo">
+          <img src="images/bb.png" alt="Black Box Logo" />
+        </div>
+        <h3>Black Box</h3>
+        <p class="price">Rp7.000.000</p>
+        <ul>
+          <li>Tidak memerlukan informasi internal</li>
+          <li>Mensimulasikan serangan eksternal</li>
+          <li>Mengandalkan pemindaian dan eksploitasi otomatis</li>
+        </ul>
+        <a href="pw.html" class="btn">Pilih Metode</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <section class="workflow">
+  <div class="container">
+    <h2>Alur Kerja Penetrasi <span>Uji Web</span></h2>
+    <div class="workflow-steps">
+      <div class="workflow-step">
+        <div class="step-number">1</div>
+        <div class="step-text">
+          <h3>Pengumpulan Informasi</h3>
+          <p>Mengidentifikasi target dengan port scanning, subdomain, dan discovery.</p>
+        </div>
+      </div>
+      <div class="workflow-step">
+        <div class="step-number">2</div>
+        <div class="step-text">
+          <h3>Pemindaian Kerentanan</h3>
+          <p>Mendeteksi celah seperti SQL Injection dan XSS dengan automated scanning.</p>
+        </div>
+      </div>
+      <div class="workflow-step">
+        <div class="step-number">3</div>
+        <div class="step-text">
+          <h3>Eksploitasi dan Verifikasi</h3>
+          <p>Menyerang celah untuk bypass autentikasi atau privilege escalation.</p>
+        </div>
+      </div>
+      <div class="workflow-step">
+        <div class="step-number">4</div>
+        <div class="step-text">
+          <h3>Pelaporan & Rekomendasi</h3>
+          <p>Menyusun laporan hasil uji dengan rekomendasi perbaikan.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <footer>
+    <p>&copy; 2023 LABSIBER. Semua hak dilindungi.</p>
+    <p><a href="#">Kebijakan Privasi</a> | <a href="#">Syarat dan Ketentuan</a></p>
+    <p>Ikuti kami di <a href="#">Facebook</a>, <a href="#">Twitter</a>, dan <a href="#">Instagram</a></p>
+  </footer>
+</body>
+</html>

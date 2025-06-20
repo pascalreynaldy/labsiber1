@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Detail Pesanan</title>
+  <link rel="stylesheet" href="co.css">
+</head>
+<body>
+  <div class="container">
+    <a href="index.html">
+    <button class="btn-kembali">← Kembali</button>
+    </a>
+    <h1>Detail Pesanan</h1>
+
+    <div class="grid-box">
+      <!-- Rincian Pesanan -->
+      <div class="card rincian">
+        <h2>🛒 Rincian Pesanan</h2>
+        <h3>Penetrasi Uji Web</h3>
+        <ul>
+          <li>Metode Black Box</li>
+          <li>4 Peran (Admin, Pengunjung, User, Penjual)</li>
+          <li>Nama Website : Awair</li>
+          <li>Link Website : Awair.co.id</li>
+        </ul>
+        <p class="catatan-title">Catatan :</p>
+        <p class="catatan">
+          Halo Kak, berikut beberapa catatan sebelum melakukan penetrasi ke website saya, Awair, ya:<br><br>
+          1. Pengujian dilakukan menggunakan metode Black Box (tanpa akses backend atau credential dari saya).<br>
+          2. Fokus utama pengujian bisa diarahkan ke:<br>
+          • Akses tidak sah antar role<br>
+          • Cek keamanan form login dan pendaftaran<br>
+          • Keamanan fitur upload (jika ada)<br>
+          • Pengecekan celah umum seperti XSS, CSRF, IDOR, dll<br>
+          • Jika menemukan celah berbahaya, tolong sertakan PoC<br><br>
+          3. Jika memungkinkan, tolong buatkan ringkasan hasil temuan.
+        </p>
+      </div>
+
+      <!-- Tipe Layanan -->
+      <div class="card layanan">
+        <h3>Tipe Layanan</h3>
+        <div class="pilihan">
+          <label><input type="radio" name="layanan" checked> Sekali Tes<br><span>Uji penetrasi hanya untuk sekali ini saja</span></label>
+          <label><input type="radio" name="layanan"> Langganan Selama 1 Tahun</label>
+        </div>
+      </div>
+
+      <!-- Pembayaran -->
+      <div class="card pembayaran">
+        <h3>Pembayaran</h3>
+        <div class="detail">
+          <p>Penetrasi Uji Web (Black Box)<span>Rp7.000.000</span></p>
+          <p>Sekali Tes<span>Rp0</span></p>
+        </div>
+        <hr>
+        <p class="total">Total <span>Rp7.000.000</span></p>
+        <label for="metode">Metode Pembayaran :</label>
+        <select id="metode">
+          <option>Pilih Metode</option>
+          <option>BCA</option>
+          <option>Mandiri</option>
+          <option>Gopay</option>
+          <option>ShopeePay</option>
+          <option>BNI</option>
+          <option>BRI</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Metode Icons -->
+    <div class="bank-list">
+      <img src="images/bca.png" alt="BCA">
+      <img src="images/mandiri.png" alt="Mandiri">
+      <img src="images/gopay.png" alt="Gopay">
+      <img src="images/spay.png" alt="ShopeePay">
+      <img src="images/bni.png" alt="BNI">
+      <img src="images/bri.png" alt="BRI">
+    </div>
+
+    <button class="btn-lanjut">Kirim Kode Transaksi</button>
+  </div>
+</body>
+</html>

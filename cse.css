@@ -1,0 +1,381 @@
+/* ===================== RESET & GLOBAL ===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: linear-gradient(184deg, #03253E 15.48%, #23839C 51.52%, #03253E 84.64%);
+  color: white;
+  padding: 2rem;
+  overflow-x: hidden;
+}
+
+
+/* ===================== HEADER / NAVBAR ===================== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4rem;
+  background: rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(6px);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.nav-left img {
+  width: 40px;
+  height: 40px;
+}
+
+.nav-left h1 {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.nav-right ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-right a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-right a:hover {
+  color: #4ef0d1;
+}
+
+.btn-daftar {
+  background-color: #00d3b7;
+  border: none;
+  padding: 0.6rem 1.3rem;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-daftar:hover {
+  background-color: #00a893;
+}
+
+
+/* ===================== DROPDOWN MENU ===================== */
+.nav-right li {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 260px;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(12px);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  z-index: 999;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+
+/* ===== LAYANAN DROPDOWN ===== */
+.dropdown-menu.layanan li a {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  text-decoration: none;
+  color: white;
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  transition: background 0.2s ease;
+}
+
+.dropdown-menu.layanan li a:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.dropdown-menu.layanan li img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.dropdown-menu.layanan li div {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-menu.layanan li strong {
+  font-size: 1rem;
+  color: #4ef0d1;
+  margin-bottom: 0.2rem;
+}
+
+.dropdown-menu.layanan li p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #ccc;
+  line-height: 1.4;
+}
+
+.dropdown-menu .selengkapnya {
+  text-align: right;
+  margin-top: 0.5rem;
+}
+
+.dropdown-menu .selengkapnya a {
+  color: #4ef0d1;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.dropdown-menu .selengkapnya a:hover {
+  text-decoration: underline;
+}
+
+
+/* ===== PERUSAHAAN DROPDOWN ===== */
+.dropdown-menu.perusahaan li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.4rem;
+  display: block;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-menu.perusahaan li a:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #4ef0d1;
+}
+
+.job-hero {
+  text-align: center;
+  padding: 4rem 2rem 2rem;
+}
+
+.hero-image {
+  width: 160px;
+  margin-bottom: 1.5rem;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.job-hero h3 {
+  color: #ffd700;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.3rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.job-hero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.job-hero p {
+  max-width: 620px;
+  margin: 0 auto;
+  color: #cfd8e3;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.job-listing {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+}
+
+.job-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  border-radius: 1rem;
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  max-width: 480px;
+  flex: 1 1 calc(50% - 2rem);
+}
+
+.job-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
+.job-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.job-header h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+.badge {
+  background-color: #ffe564;
+  color: #3b3b3b;
+  font-weight: 600;
+  font-size: 0.75rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  align-self: flex-start;
+}
+
+.job-card p {
+  font-size: 1rem;
+  color: #e0e0e0;
+  margin-bottom: 1rem;
+}
+
+.job-description {
+  margin: 1.2rem 0;
+}
+
+.job-description h5 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.job-description ul {
+  padding-left: 1.2rem;
+  margin: 0 0 1rem 0;
+}
+
+.job-description ul li {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #e0e0e0;
+  margin-bottom: 0.3rem;
+}
+
+.job-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.btn {
+  padding: 0.55rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background-color: #00d3b7;
+  color: #fff;
+  border: none;
+  align-items: center;
+}
+
+.btn-primary:hover {
+  background-color: #00bda3;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid #00d3b7;
+  color: #00d3b7;
+}
+
+.btn-secondary:hover {
+  background-color: #00d3b7;
+  color: #fff;
+}
+
+/* Responsive Stack */
+@media (max-width: 768px) {
+  .job-card {
+    flex: 1 1 100%;
+  }
+}
+
+/* ===================== FOOTER ===================== */
+footer {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+footer p {
+  color: #d1d5db;
+  margin-bottom: 0.5rem;
+}
+
+footer a {
+  color: #00d3b7;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}

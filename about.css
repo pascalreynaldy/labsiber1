@@ -1,0 +1,555 @@
+/* === RESET & GLOBAL === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: linear-gradient(184deg, #03253E 15.48%, #23839C 51.52%, #03253E 84.64%);
+  color: white;
+  padding: 2rem;
+  overflow-x: hidden;
+}
+
+/* === HEADER / NAVBAR === */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4rem;
+  background: rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(6px);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.nav-left img {
+  width: 40px;
+  height: 40px;
+}
+
+.nav-left h1 {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.nav-right ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-right a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-right a:hover {
+  color: #4ef0d1;
+}
+
+.btn-daftar {
+  background-color: #00d3b7;
+  border: none;
+  padding: 0.6rem 1.3rem;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-daftar:hover {
+  background-color: #00a893;
+}
+
+/* === DROPDOWN BASE === */
+.nav-right li {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 260px;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(12px);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  z-index: 999;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* === LAYANAN DROPDOWN WITH ICONS === */
+.dropdown-menu.layanan li a {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  text-decoration: none;
+  color: white;
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  transition: background 0.2s ease;
+}
+
+.dropdown-menu.layanan li a:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.dropdown-menu.layanan li img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.dropdown-menu.layanan li div {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-menu.layanan li strong {
+  font-size: 1rem;
+  color: #4ef0d1;
+  margin-bottom: 0.2rem;
+}
+
+.dropdown-menu.layanan li p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #ccc;
+  line-height: 1.4;
+}
+
+/* Link "Selengkapnya" */
+.dropdown-menu .selengkapnya {
+  text-align: right;
+  margin-top: 0.5rem;
+}
+
+.dropdown-menu .selengkapnya a {
+  color: #4ef0d1;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.dropdown-menu .selengkapnya a:hover {
+  text-decoration: underline;
+}
+
+/* === PERUSAHAAN DROPDOWN === */
+.dropdown-menu.perusahaan li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.4rem;
+  display: block;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-menu.perusahaan li a:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #4ef0d1;
+}
+
+/* Hero */
+.hero {
+  background: url('images/hero-bg.jpg') center/cover no-repeat;
+  padding: 8rem 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+}
+
+.hero span {
+  color: #4ef0d1;
+}
+
+/* === Facts Section === */
+.facts {
+  padding: 3rem 1.5rem;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+  border-radius: 1rem;
+  color: #ffffff;
+}
+
+.facts h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.facts p {
+  max-width: 800px;
+  margin: 0 auto 2.5rem;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: #cfd8dc;
+  text-align: center;
+}
+
+/* Card Container */
+.fact-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Individual Card */
+.fact {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.fact:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 20px rgba(0, 255, 224, 0.1);
+}
+
+.fact p {
+  margin: 0.5rem 0 0;
+  font-size: 0.95rem;
+}
+
+.fact strong {
+  font-size: 1.2rem;
+  color: #4ef0d1;
+}
+
+
+/* === Team Section === */
+.team {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.team h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  color: #ffffff;
+}
+
+.team .leaders {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+.leader {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border-radius: 1.5rem;
+  padding: 1rem 1rem 1.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 260px;
+  text-align: center;
+}
+
+.leader:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(0, 255, 224, 0.1);
+}
+
+.leader img {
+  width: 100%;
+  height: auto;
+  border-radius: 1.2rem;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.leader h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.3rem;
+}
+
+.leader p {
+  font-size: 0.9rem;
+  color: #cfd8dc;
+}
+
+
+
+/* === Tujuan Section === */
+.tujuan {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+/* Testimoni Card */
+.tujuan .testimoni {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  padding: 1.5rem 2rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+  text-align: left;
+}
+
+/* Gambar Profil */
+.testimoni img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #4ef0d1;
+  box-shadow: 0 4px 10px rgba(0, 255, 224, 0.2);
+  flex-shrink: 0;
+}
+
+/* Konten Testimoni */
+.testimoni .text {
+  display: flex;
+  flex-direction: column;
+}
+
+.testimoni .text p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.testimoni .text small {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #4ef0d1;
+  font-weight: 500;
+}
+
+
+/* === NILAI (Values) === */
+.nilai {
+  text-align: center;
+  padding: 3rem 1.5rem;
+}
+
+.nilai h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.nilai-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 kolom */
+  gap: 2rem;
+  margin-top: 2.5rem;
+  max-width: 800px;
+  margin-inline: auto; /* tengah */
+}
+
+/* Responsive agar tetap 1 kolom di layar kecil */
+@media (max-width: 600px) {
+  .nilai-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.nilai-grid .box {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 1.25rem;
+  padding: 2rem;
+  color: #ffffff;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 255, 224, 0.1);
+  position: relative;
+}
+
+/* Judul nilai */
+.nilai-grid .box h3 {
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #4ef0d1;
+}
+
+/* Deskripsi nilai */
+.nilai-grid .box p {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #ddd;
+}
+
+/* Hover effect */
+.nilai-grid .box:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(0, 255, 224, 0.2);
+  border-color: #4ef0d1;
+}
+
+/*=== PENCAPAIAN ===*/
+.pencapaian {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.pencapaian h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.pencapaian span {
+  color: #4ef0d1;
+}
+
+.slider-wrapper {
+  position: relative;
+  max-width: 960px; /* Batasi lebar maksimal */
+  margin: 0 auto;    /* Pusatkan secara horizontal */
+  overflow: hidden;
+  padding: 0 1rem;   /* Tambahan padding sisi dalam */
+}
+
+.slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 1.2rem;
+  padding: 0.5rem;
+  scrollbar-width: none; /* Firefox */
+}
+
+.slider::-webkit-scrollbar {
+  display: none; /* Chrome */
+}
+
+.slider img {
+  width: 180px;
+  height: auto;
+  flex-shrink: 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.slider img:hover {
+  transform: scale(1.05);
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  font-size: 1.8rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1;
+  transition: background 0.3s ease;
+}
+
+.slider-btn:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+.slider-btn.prev {
+  left: 0.5rem;
+}
+
+.slider-btn.next {
+  right: 0.5rem;
+}
+
+
+/* Quotes */
+.quotes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.quote-box {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 1rem;
+  border-radius: 1rem;
+  font-style: italic;
+}
+
+/* =================== FOOTER =================== */
+footer {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+footer p {
+  color: #d1d5db;
+  margin-bottom: 0.5rem;
+}
+
+footer a {
+  color: #00d3b7;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}

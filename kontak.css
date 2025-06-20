@@ -1,0 +1,366 @@
+/* ========== RESET & GLOBAL ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: linear-gradient(184deg, #03253E 15.48%, #23839C 51.52%, #03253E 84.64%);
+  color: white;
+  padding: 2rem;
+  overflow-x: hidden;
+}
+
+/* ========== HEADER / NAVBAR ========== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4rem;
+  background: rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(6px);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.nav-left img {
+  width: 40px;
+  height: 40px;
+}
+
+.nav-left h1 {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.nav-right ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-right a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-right a:hover {
+  color: #4ef0d1;
+}
+
+.btn-daftar {
+  background-color: #00d3b7;
+  border: none;
+  padding: 0.6rem 1.3rem;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-daftar:hover {
+  background-color: #00a893;
+}
+
+/* ========== DROPDOWN MENU ========== */
+.nav-right li {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 260px;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(12px);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  z-index: 999;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* ========== LAYANAN DROPDOWN ========== */
+.dropdown-menu.layanan li a {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  text-decoration: none;
+  color: white;
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  transition: background 0.2s ease;
+}
+
+.dropdown-menu.layanan li a:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.dropdown-menu.layanan li img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.dropdown-menu.layanan li div {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-menu.layanan li strong {
+  font-size: 1rem;
+  color: #4ef0d1;
+  margin-bottom: 0.2rem;
+}
+
+.dropdown-menu.layanan li p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #ccc;
+  line-height: 1.4;
+}
+
+.dropdown-menu .selengkapnya {
+  text-align: right;
+  margin-top: 0.5rem;
+}
+
+.dropdown-menu .selengkapnya a {
+  color: #4ef0d1;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.dropdown-menu .selengkapnya a:hover {
+  text-decoration: underline;
+}
+
+/* ========== PERUSAHAAN DROPDOWN ========== */
+.dropdown-menu.perusahaan li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.4rem;
+  display: block;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-menu.perusahaan li a:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #4ef0d1;
+}
+
+/* ========== HERO SECTION ========== */
+.hero {
+  background: url("images/hero-kontak.jpg") no-repeat center center/cover;
+  height: 300px;
+  display: flex;
+  align-items: flex-end;
+  padding: 2rem;
+}
+
+.hero-text p {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.hero-text span {
+  color: #00d3b7;
+}
+
+/* ========== FORM KONTAK ========== */
+.contact-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 3rem 2rem;
+}
+
+.left {
+  flex: 2;
+  min-width: 300px;
+}
+
+.left h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.left p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.form-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-group input {
+  flex: 1;
+}
+
+textarea {
+  height: 150px;
+  resize: none;
+}
+
+.check-note {
+  font-size: 0.8rem;
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+button[type="submit"] {
+  background-color: #00d3b7;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #00a893;
+}
+
+.disclaimer {
+  font-size: 0.8rem;
+  color: #ccc;
+  margin-top: 1rem;
+}
+
+/* ========== INFORMASI KONTAK ========== */
+.right {
+  flex: 1;
+  min-width: 280px;
+  margin-top: 12rem;
+}
+
+.right p {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #d1d5db;
+}
+
+.contact-info {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+.contact-info li {
+  margin-bottom: 0.8rem;
+  position: relative;
+}
+
+/* ========== FOOTER ========== */
+footer {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.footer-top img {
+  height: 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tagline {
+  font-size: 0.95rem;
+  color: #cfcfcf;
+  margin: 1rem 0;
+}
+
+.socials {
+  margin-top: 1rem;
+}
+
+.socials p {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.socials a {
+  margin: 0 0.5rem;
+  font-size: 0.95rem;
+  color: #4ef0d1;
+}
+
+.socials a:hover {
+  text-decoration: underline;
+}
+
+footer p {
+  font-size: 0.75rem;
+  color: #d1d5db;
+  margin-top: 0.5rem;
+}
+
+footer a {
+  color: #00d3b7;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}

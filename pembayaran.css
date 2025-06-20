@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  background: linear-gradient(145deg, #002b48, #087ca7);
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(6px);
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  max-width: 700px;
+  width: 100%;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0b2b42;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* Jadwal Ringkasan */
+.jadwal-ringkasan {
+  background-color: rgba(8, 124, 167, 0.07);
+  padding: 16px 20px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  border-left: 5px solid #087ca7;
+}
+
+.jadwal-ringkasan p {
+  margin: 6px 0;
+  font-size: 1rem;
+  color: #0b2b42;
+}
+
+.jadwal-ringkasan strong {
+  font-weight: 600;
+}
+
+/* Formulir */
+.form-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.form-group {
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full {
+  flex: 1 1 100%;
+}
+
+label {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #0b2b42;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background: #f9fafb;
+  transition: border 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #087ca7;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(8, 124, 167, 0.2);
+}
+
+textarea {
+  resize: vertical;
+}
+
+.checkbox {
+  margin-top: 10px;
+}
+
+.checkbox label {
+  font-weight: normal;
+  color: #374151;
+  font-size: 0.95rem;
+}
+
+.checkbox input {
+  margin-right: 8px;
+}
+
+.checkbox a {
+  color: #087ca7;
+  text-decoration: underline;
+}
+
+.button-group {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.button-group button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: #0b2b42;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.button-group button:hover {
+  background-color: #087ca7;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}

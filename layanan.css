@@ -1,0 +1,717 @@
+/* ========== RESET & GLOBAL ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: linear-gradient(184deg, #03253E 15.48%, #23839C 51.52%, #03253E 84.64%);
+  color: white;
+  padding: 2rem;
+  overflow-x: hidden;
+}
+
+/* ========== HEADER / NAVBAR ========== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4rem;
+  background: rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(6px);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.nav-left img {
+  width: 40px;
+  height: 40px;
+}
+
+.nav-left h1 {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.nav-right ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-right a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-right a:hover {
+  color: #4ef0d1;
+}
+
+.btn-daftar {
+  background-color: #00d3b7;
+  border: none;
+  padding: 0.6rem 1.3rem;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-daftar:hover {
+  background-color: #00a893;
+}
+
+/* ========== DROPDOWN MENU ========== */
+.nav-right li {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 260px;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(12px);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  z-index: 999;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* ========== LAYANAN DROPDOWN ========== */
+.dropdown-menu.layanan li a {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  text-decoration: none;
+  color: white;
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  transition: background 0.2s ease;
+}
+
+.dropdown-menu.layanan li a:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.dropdown-menu.layanan li img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.dropdown-menu.layanan li div {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-menu.layanan li strong {
+  font-size: 1rem;
+  color: #4ef0d1;
+  margin-bottom: 0.2rem;
+}
+
+.dropdown-menu.layanan li p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #ccc;
+  line-height: 1.4;
+}
+
+.dropdown-menu .selengkapnya {
+  text-align: right;
+  margin-top: 0.5rem;
+}
+
+.dropdown-menu .selengkapnya a {
+  color: #4ef0d1;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.dropdown-menu .selengkapnya a:hover {
+  text-decoration: underline;
+}
+
+/* =================== HERO SECTION =================== */
+.hero {
+  padding: 3rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  border-radius: 1rem;
+  padding: 4rem 2rem 2rem;
+    background-color: rgba(255, 255, 255, 0.05);
+
+}
+
+.hero-left {
+  flex: 1 1 500px;
+  max-width: 600px;
+}
+
+.hero-left h1 {
+  font-size: 2.8rem;
+  line-height: 3.2rem;
+  margin-bottom: 1rem;
+}
+
+.hero-left h1 span {
+  color: #00e0c6;
+}
+
+.hero-left p {
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+  color: #cfd8dc;
+}
+
+.btn-primary {
+  background-color: #1e90ff;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #187bcd;
+}
+
+.hero-right {
+  flex: 1 1 400px;
+  text-align: center;
+}
+
+.hero-right img {
+  max-width: 40%;
+  height: auto;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* =================== TRUSTED BY =================== */
+.trusted-by {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18rem;
+  padding: 2rem 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.trusted-by-logo {
+  max-width: 150px;
+  opacity: 0.8;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.trusted-by-logo:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+/* =================== SECTION UMUM =================== */
+.section {
+  padding: 5rem 2rem;
+  color: #fff;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+}
+
+.section h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+.section h2 span {
+  color: #00ffe0;
+  background: linear-gradient(90deg, #00ffe0, #00c4ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3.5rem;
+}
+
+.card {
+  background: rgba(20, 40, 60, 0.6);
+  backdrop-filter: blur(16px);
+  padding: 2.5rem 2rem 3rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  border-color: #00ffe0;
+  box-shadow: 0 16px 36px rgba(0, 255, 224, 0.3);
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 1.2rem;
+  color: #00ffe0;
+  transition: transform 0.3s ease;
+}
+
+.card-icon img {
+  width: 72px;
+  height: auto;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-icon,
+.card:hover .card-icon img {
+  transform: scale(1.1);
+}
+
+.card strong {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  color: #ffffff;
+}
+
+.card small {
+  font-size: 0.95rem;
+  color: #cfd8dc;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.more-link {
+  margin-top: auto;
+  display: inline-block;
+  background-color: #00d3b7;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.6rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  box-shadow: 0 3px 10px rgba(0, 255, 224, 0.2);
+}
+
+.more-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 16px rgba(0, 255, 224, 0.4);
+}
+
+.more-link::after {
+  content: '→';
+  margin-left: 0.5rem;
+  opacity: 0;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.more-link:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* =================== WORKFLOW =================== */
+.workflow {
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  color: #ffffff;
+  padding: 4rem 2rem;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+}
+
+.workflow h2 {
+  font-size: 2.2rem;
+  margin-bottom: 3rem;
+  color: #ffffff; /* diganti dari #00ffe0 */
+}
+
+.workflow-steps {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.workflow-steps::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 3px;
+  background: rgba(255, 255, 255, 0.1); /* diganti dari biru ke transparan-putih */
+  transform: translateX(-50%);
+}
+
+.workflow-step {
+  position: relative;
+  width: 48%;
+  padding: 1rem 1.5rem;
+  background-color: rgba(20, 40, 60, 0.6);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  text-align: left;
+}
+
+.workflow-step:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(255, 255, 255, 0.08);
+}
+
+/* Selang-seling kiri kanan */
+.workflow-step:nth-child(odd) {
+  align-self: flex-start;
+}
+
+.workflow-step:nth-child(even) {
+  align-self: flex-end;
+}
+
+.workflow-step .step-number {
+  background-color: #00d3b7;
+  color: #0f1e2a;
+  font-weight: bold;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.workflow-step .step-text {
+  flex: 1;
+}
+
+.workflow-step .step-text h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.3rem;
+  color: #ffffff; /* semula #00ffe0 */
+}
+
+.workflow-step .step-text p {
+  font-size: 0.95rem;
+  color: #cfd8dc;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .workflow-steps::before {
+    left: 8px;
+  }
+
+  .workflow-step {
+    width: 100%;
+    align-self: center;
+    padding-left: 2.5rem;
+  }
+
+  .workflow-step:nth-child(even),
+  .workflow-step:nth-child(odd) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .workflow-step .step-number {
+    position: absolute;
+    left: 0;
+    top: 1rem;
+  }
+}
+
+
+/* =================== REPORT =================== */
+.laporan {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 20px;
+  font-family: 'Inter', sans-serif;
+  color: #1f2937;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+}
+
+.laporan h1 {
+  color: #ffffff;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 700;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* membuat teks lebih terbaca di latar gelap */
+}
+
+
+.tab-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 40px 20px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.struktur {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.struktur label {
+  display: block;
+  padding: 14px 18px;
+  border: 2px solid transparent;
+  background: linear-gradient(to right, #e0f2fe, #f0f9ff);
+  color: #0f172a;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+.struktur label:hover {
+  background: linear-gradient(to right, #dbeafe, #e0f2fe);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+.struktur .deskripsi-tab {
+  font-weight: normal;
+  font-size: 0.92rem;
+  color: #fff;
+  margin-top: 6px;
+  display: none;
+  line-height: 1.5;
+}
+
+input#tab1:checked ~ .struktur label[for="tab1"],
+input#tab2:checked ~ .struktur label[for="tab2"],
+input#tab3:checked ~ .struktur label[for="tab3"],
+input#tab4:checked ~ .struktur label[for="tab4"] {
+  background: linear-gradient(to right, #2563eb, #3b82f6);
+  color: #ffffff;
+  border-color: #2563eb;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);
+}
+
+input#tab1:checked ~ .struktur label[for="tab1"] .deskripsi-tab,
+input#tab2:checked ~ .struktur label[for="tab2"] .deskripsi-tab,
+input#tab3:checked ~ .struktur label[for="tab3"] .deskripsi-tab,
+input#tab4:checked ~ .struktur label[for="tab4"] .deskripsi-tab {
+  display: block;
+}
+
+.isi {
+  flex: 3;
+  min-width: 100px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  display: none;
+  text-align: center;
+  padding: 24px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+}
+
+.content img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease;
+}
+
+.content img:hover {
+  transform: scale(1.015);
+}
+
+input#tab1:checked ~ .isi .content1,
+input#tab2:checked ~ .isi .content2,
+input#tab3:checked ~ .isi .content3,
+input#tab4:checked ~ .isi .content4 {
+  display: block;
+}
+
+
+/* =================== TESTIMONI =================== */
+.testimoni {
+  background-color: #0f1e2a;
+  padding: 4rem 2rem;
+  color: #ffffff;
+  text-align: center;
+}
+
+.testimoni h2 {
+  font-size: 2.5rem;
+  color: #00ffe0;
+  margin-bottom: 3rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 8px rgba(0, 255, 224, 0.15);
+}
+
+.testimoni-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.testimoni-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimoni-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 255, 224, 0.1);
+}
+
+.testimoni-card img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.2rem;
+  border: 2px solid #00ffe0;
+}
+
+.testimoni-card p {
+  font-style: italic;
+  font-size: 1rem;
+  color: #e0e0e0;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.testimoni-card strong {
+  display: block;
+  color: #00ffe0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+
+/* =================== FOOTER =================== */
+footer {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+footer p {
+  color: #d1d5db;
+  margin-bottom: 0.5rem;
+}
+
+footer a {
+  color: #00d3b7;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* =================== LOGO =================== */
+img.logo {
+  height: 40px;
+}

@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  min-height: 100vh;
+  padding-top: 40px;
+}
+
+.container {
+  width: 100%;
+  max-width: 360px;
+  padding: 24px 20px;
+  border: 1.5px solid #ccc;     /* garis abu tipis */
+  border-radius: 16px;           /* sudut membulat */
+  background-color: #fff;        /* latar belakang putih */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* bayangan lembut */
+  margin: 100px auto 0;
+}
+
+.back-arrow {
+  display: block;
+  font-size: 16px;
+  color: #000;
+  margin-bottom: 30px;
+  text-decoration: none;
+}
+
+.login-box {
+  text-align: center;
+}
+
+.icon {
+  width: 60px;
+  height: 63px;
+  flex-shrink: 0;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  width: 100%;
+}
+
+.password-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.forgot {
+  font-size: 12px;
+  color: #0077cc;
+  text-decoration: none;
+}
+
+.signup-text {
+  font-size: 13px;
+  text-align: left;
+  margin-top: -10px;
+}
+
+.signup-text a {
+  color: #0077cc;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-btn,
+.google-btn {
+  padding: 12px;
+  border-radius: 50px;
+  border: 1.5px solid black;
+  font-size: 15px;
+  background-color: white;
+  cursor: pointer;
+  transition: 0.2s;
+  font-weight: 500;
+}
+
+.login-btn:hover,
+.google-btn:hover {
+  background-color: #f0f0f0;
+}
+
+.google-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
