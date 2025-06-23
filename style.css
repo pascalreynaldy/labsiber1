@@ -742,7 +742,7 @@ footer a:hover {
   height: 100vh;
   top: 0;
   left: 0;
-  background: #4CB8B6;
+  background: linear-gradient(184deg, #03253E 15.48%, #23839C 51.52%, #03253E 84.64%);
   overflow: hidden;
 }
 
