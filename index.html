@@ -103,8 +103,15 @@
       <a href="layanan.html" class="btn-daftar">Pelajari Lebih Lanjut!</a>
     </div>
     <div class="hero-right">
-      <img src="images\UI Image.png" />
-    </div>
+    <div class="slider">
+      <img src="images/slider1.png" class="slide active" />
+      <img src="images/slider2.png" class="slide" />
+      <img src="images/slider3.png" class="slide" />
+      <img src="images/slider4.png" class="slide" />
+    <!-- Tambah gambar lain sesuai kebutuhan -->
+  </div>
+</div>
+
   </section>
 
 <section class="workflow">
@@ -197,5 +204,28 @@
     <p><a href="#">Kebijakan Privasi</a> | <a href="#">Syarat dan Ketentuan</a></p>
     <p>Ikuti kami di <a href="#">Facebook</a>, <a href="#">Twitter</a>, dan <a href="#">Instagram</a></p>
   </footer>
+
+  <script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
+    });
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  // Tampilkan slide pertama
+  showSlide(currentSlide);
+
+  // Ganti slide setiap 3 detik
+  setInterval(nextSlide, 3000);
+</script>
+
 </body>
 </html>

@@ -222,13 +222,32 @@ header {
 .hero-left ul li {
   margin-bottom: 0.5rem;
 }
-
-.hero-right img {
-  width: 500px;
-  max-width: 100%;
-  border-radius: 10px;
+/* === SLIDER === */
+.hero-right {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  overflow: hidden;
+  border-radius: 12px;
 }
 
+.slider {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.slide {
+  display: none;
+  width: 100%;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+  display: block;
+}
+
+/* === ALUR === */
 .alur-section {
   padding: 4rem 2rem;
   text-align: center;
