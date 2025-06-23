@@ -764,11 +764,11 @@ footer a:hover {
 }
 
 .ball:nth-child(odd) {
-    color: #081249;
+    color: #23839C;
 }
 
 .ball:nth-child(even) {
-    color: #168292;
+    color: #03253E;
 }
 
 /* Using a custom attribute for variability */
