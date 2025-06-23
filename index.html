@@ -103,16 +103,19 @@
       <a href="layanan.html" class="btn-daftar">Pelajari Lebih Lanjut!</a>
     </div>
     <div class="hero-right">
-  <div class="carousel">
-    <div class="carousel-track">
-      <img src="images/slider1.png" class="carousel-image active">
-      <img src="images/slider2.png" class="carousel-image">
-      <img src="images/slider3.png" class="carousel-image">
-      <img src="images/slider4.png" class="carousel-image">
-    </div>
+  <div class="slider">
+    <img src="images/slider1.png" class="slide active" />
+    <img src="images/slider2.png" class="slide" />
+    <img src="images/slider3.png" class="slide" />
+    <img src="images/slider4.png" class="slide" />
+  </div>
+  <div class="dots">
+    <span class="dot active" onclick="currentSlide(0)"></span>
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
   </div>
 </div>
-
 </div>
 
   </section>
@@ -209,33 +212,31 @@
   </footer>
 
 <script>
-  let index = 0;
-  const slides = document.querySelectorAll('.carousel-image');
+  let current = 0;
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.dot');
 
-  function showSlide(i) {
-    slides.forEach((slide, idx) => {
-      slide.classList.remove('active');
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
     });
-    slides[i].classList.add('active');
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === index);
+    });
+    current = index;
   }
 
   function nextSlide() {
-    index = (index + 1) % slides.length;
+    let next = (current + 1) % slides.length;
+    showSlide(next);
+  }
+
+  function currentSlide(index) {
     showSlide(index);
   }
 
-  setInterval(nextSlide, 4000); // Slide tiap 4 detik
-
-  slides.forEach((slide, i) => {
-    slide.addEventListener('click', () => {
-      index = i;
-      showSlide(index);
-    });
-  });
-
-  showSlide(index);
+  setInterval(nextSlide, 4000); // setiap 4 detik
 </script>
-
 
 
 </body>
