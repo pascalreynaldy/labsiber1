@@ -225,27 +225,52 @@ header {
 /* === SLIDER === */
 .hero-right {
   position: relative;
-  width: 100%;
   max-width: 400px;
+  margin: auto;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
 }
 
 .slider {
   position: relative;
   width: 100%;
-  height: auto;
 }
 
 .slide {
-  display: none;
+  position: absolute;
+  top: 0; left: 0;
   width: 100%;
+  opacity: 0;
   transition: opacity 1s ease-in-out;
 }
 
 .slide.active {
-  display: block;
+  opacity: 1;
+  position: relative;
+  z-index: 1;
 }
+
+.dots {
+  text-align: center;
+  padding-top: 10px;
+}
+
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 6px;
+  background-color: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: #007bff;
+}
+
 
 /* === ALUR === */
 .alur-section {

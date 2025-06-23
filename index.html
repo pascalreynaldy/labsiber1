@@ -103,13 +103,17 @@
       <a href="layanan.html" class="btn-daftar">Pelajari Lebih Lanjut!</a>
     </div>
     <div class="hero-right">
-    <div class="slider">
-      <img src="images/slider1.png" class="slide active" />
-      <img src="images/slider2.png" class="slide" />
-      <img src="images/slider3.png" class="slide" />
-      <img src="images/slider4.png" class="slide" />
-    <!-- Tambah gambar lain sesuai kebutuhan -->
+  <div class="slider">
+    <img src="images/slide1.png" class="slide active" />
+    <img src="images/slide2.png" class="slide" />
+    <img src="images/slide3.png" class="slide" />
   </div>
+  <div class="dots">
+    <span class="dot active" onclick="currentSlide(0)"></span>
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+  </div>
+</div>
 </div>
 
   </section>
@@ -205,27 +209,33 @@
     <p>Ikuti kami di <a href="#">Facebook</a>, <a href="#">Twitter</a>, dan <a href="#">Instagram</a></p>
   </footer>
 
-  <script>
-  let currentSlide = 0;
+<script>
+  let current = 0;
   const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.dot');
 
   function showSlide(index) {
     slides.forEach((slide, i) => {
       slide.classList.toggle('active', i === index);
     });
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === index);
+    });
+    current = index;
   }
 
   function nextSlide() {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
+    let next = (current + 1) % slides.length;
+    showSlide(next);
   }
 
-  // Tampilkan slide pertama
-  showSlide(currentSlide);
+  function currentSlide(index) {
+    showSlide(index);
+  }
 
-  // Ganti slide setiap 3 detik
-  setInterval(nextSlide, 3000);
+  setInterval(nextSlide, 4000); // setiap 4 detik
 </script>
+
 
 </body>
 </html>
