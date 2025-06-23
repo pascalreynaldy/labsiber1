@@ -638,6 +638,12 @@ footer a:hover {
   font-weight: 600;
 }
 
+.paket-card.popular:hover {
+  transform: translateY(-10px) scale(1.03);
+  border-color: #fde047;
+  box-shadow: 0 16px 36px rgba(0, 255, 224, 0.3);
+}
+
 .paket-card .harga {
   font-size: 1.2rem;
   color: #00d3b7;
