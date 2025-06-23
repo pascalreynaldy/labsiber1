@@ -224,58 +224,47 @@ header {
 }
 /* === SLIDER === */
 .hero-right {
-  position: relative;
-  max-width: 400px;
+  width: 100%;
+  max-width: 500px;
   margin: auto;
+  perspective: 1000px;
+}
+
+.carousel {
+  position: relative;
   overflow: hidden;
+  height: 300px;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.8s ease;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-image {
+  width: 70%;
+  opacity: 0.5;
+  transform: scale(0.9);
+  transition: all 0.6s ease;
+  margin: 0 10px;
   border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  background-color: #fff; /* Tambahkan latar belakang putih */
-}
-
-.slider {
-  position: relative;
-  width: 100%;
-}
-
-.slide {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  opacity: 0;
-  transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Tambahkan transisi transform */
-  transform: scale(1.05); /* Efek zoom */
-}
-
-.slide.active {
-  opacity: 1;
-  position: relative;
-  z-index: 1;
-  transform: scale(1); /* Kembalikan ke ukuran normal saat aktif */
-}
-
-.dots {
-  text-align: center;
-  padding-top: 10px;
-}
-
-.dot {
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  margin: 0 6px;
-  background-color: #bbb;
-  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease; /* Tambahkan transisi transform */
 }
 
-.dot:hover {
-  transform: scale(1.2); /* Efek hover untuk memperbesar dot */
+.carousel-image.active {
+  opacity: 1;
+  transform: scale(1.1);
+  z-index: 2;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-.dot.active {
-  background-color: #007bff;
+.carousel-image:hover {
+  transform: scale(1.2);
+  opacity: 1;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
 }
 
 

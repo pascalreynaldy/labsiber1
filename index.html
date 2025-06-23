@@ -212,31 +212,33 @@
   </footer>
 
 <script>
-  let current = 0;
-  const slides = document.querySelectorAll('.slide');
-  const dots = document.querySelectorAll('.dot');
+  let index = 0;
+  const slides = document.querySelectorAll('.carousel-image');
 
-  function showSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.classList.toggle('active', i === index);
+  function showSlide(i) {
+    slides.forEach((slide, idx) => {
+      slide.classList.remove('active');
     });
-    dots.forEach((dot, i) => {
-      dot.classList.toggle('active', i === index);
-    });
-    current = index;
+    slides[i].classList.add('active');
   }
 
   function nextSlide() {
-    let next = (current + 1) % slides.length;
-    showSlide(next);
-  }
-
-  function currentSlide(index) {
+    index = (index + 1) % slides.length;
     showSlide(index);
   }
 
-  setInterval(nextSlide, 4000); // setiap 4 detik
+  setInterval(nextSlide, 4000); // Slide tiap 4 detik
+
+  slides.forEach((slide, i) => {
+    slide.addEventListener('click', () => {
+      index = i;
+      showSlide(index);
+    });
+  });
+
+  showSlide(index);
 </script>
+
 
 
 </body>
